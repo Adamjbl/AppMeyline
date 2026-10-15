@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import { Home, ShieldCheck, Calendar, FileText, ArrowRight } from 'lucide-react'
-import HeroIllustration from '../components/HeroIllustration'
 
 export default function Landing() {
   return (
@@ -19,22 +18,7 @@ export default function Landing() {
         </span>
       </div>
 
-      <div className="relative mt-5 shrink-0 overflow-hidden rounded-3xl">
-        <div className="aspect-[4/3] w-full">
-          <HeroIllustration />
-        </div>
-        <div className="absolute bottom-3 left-3 right-3 flex items-center gap-2.5 rounded-2xl bg-white/95 p-3 shadow-lg backdrop-blur">
-          <span className="flex h-8 w-8 flex-none items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
-            <ShieldCheck size={16} />
-          </span>
-          <div>
-            <p className="text-sm font-bold text-navy-950">Votre projet, entre de bonnes mains.</p>
-            <p className="text-xs text-slate-500">Des artisans vérifiés, en toute confiance.</p>
-          </div>
-        </div>
-      </div>
-
-      <p className="mt-6 text-xs font-bold uppercase tracking-wide text-navy-700">
+      <p className="mt-8 text-xs font-bold uppercase tracking-wide text-navy-700">
         Trouvez votre artisan en 2 clics
       </p>
       <h1 className="mt-1 text-3xl font-extrabold leading-tight text-navy-950">
@@ -45,6 +29,16 @@ export default function Landing() {
       <p className="mt-3 text-sm text-slate-500">
         Des artisans vérifiés près de chez vous, et un chantier qui avance au bon rythme.
       </p>
+
+      <div className="mt-5 flex items-center gap-2.5 rounded-2xl border border-slate-200 bg-white p-3">
+        <span className="flex h-8 w-8 flex-none items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+          <ShieldCheck size={16} />
+        </span>
+        <div>
+          <p className="text-sm font-bold text-navy-950">Votre projet, entre de bonnes mains.</p>
+          <p className="text-xs text-slate-500">Des artisans vérifiés, en toute confiance.</p>
+        </div>
+      </div>
 
       <div className="mt-5 grid grid-cols-3 gap-2">
         {[
