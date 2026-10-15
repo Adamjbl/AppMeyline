@@ -18,7 +18,7 @@ export default function ScreenHeader({ title, subtitle, back, floating }: Props)
           {back && (
             <button
               onClick={() => navigate(-1)}
-              className="mb-2 -ml-1 flex items-center gap-0.5 text-sm text-white/80"
+              className="press-sm mb-2 -ml-1 flex items-center gap-0.5 text-sm text-white/80"
             >
               <ChevronLeft size={16} /> Retour
             </button>

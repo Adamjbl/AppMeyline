@@ -15,15 +15,15 @@ export default function ArtisanDashboard() {
 
       <div className="-mt-3 space-y-4 px-5">
         <div className="grid grid-cols-3 gap-2">
-          <div className="rounded-2xl border border-slate-200 bg-white p-3 text-center shadow-sm">
+          <div className="rounded-2xl border border-slate-200 bg-white p-3 text-center">
             <p className="text-xl font-extrabold text-navy-950">4,8</p>
             <p className="text-[11px] text-slate-400">Note</p>
           </div>
-          <div className="rounded-2xl border border-slate-200 bg-white p-3 text-center shadow-sm">
+          <div className="rounded-2xl border border-slate-200 bg-white p-3 text-center">
             <p className="text-xl font-extrabold text-navy-950">32</p>
             <p className="text-[11px] text-slate-400">Avis</p>
           </div>
-          <div className="rounded-2xl border border-slate-200 bg-white p-3 text-center shadow-sm">
+          <div className="rounded-2xl border border-slate-200 bg-white p-3 text-center">
             <p className="text-xl font-extrabold text-navy-950">{pending.length}</p>
             <p className="text-[11px] text-slate-400">Demande{pending.length > 1 ? 's' : ''}</p>
           </div>
@@ -36,7 +36,7 @@ export default function ArtisanDashboard() {
           </div>
         ) : (
           pending.map((req) => (
-            <div key={req.id} className="rounded-2xl border-2 border-accent-500 bg-white p-4 shadow-sm">
+            <div key={req.id} className="rounded-2xl border-2 border-accent-500 bg-white p-4">
               <p className="text-xs font-bold uppercase tracking-wide text-accent-600">
                 Nouvelle demande · {req.createdAgo}
               </p>
@@ -61,7 +61,7 @@ export default function ArtisanDashboard() {
               </div>
               <Link
                 to={`/artisan/demandes/${req.id}`}
-                className="mt-3 flex items-center justify-center gap-2 rounded-full bg-accent-500 py-3 font-bold text-white"
+                className="mt-3 flex items-center justify-center gap-2 rounded-full bg-accent-500 py-3 font-bold text-white press"
               >
                 Voir la demande <ArrowRight size={16} />
               </Link>
@@ -69,7 +69,7 @@ export default function ArtisanDashboard() {
           ))
         )}
 
-        <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+        <div className="rounded-2xl border border-slate-200 bg-white p-4">
           <p className="font-bold text-navy-950">Mes disponibilités</p>
           <p className="mt-2 flex items-center gap-1.5 text-sm text-slate-600">
             <Calendar size={15} className="text-link-600" /> Libre du lun. 12 oct. au ven. 13 nov.
@@ -81,7 +81,7 @@ export default function ArtisanDashboard() {
 
         <Link
           to="/artisan/dossier"
-          className="flex items-center justify-between rounded-2xl border border-slate-200 bg-white p-4 shadow-sm"
+          className="press-sm flex items-center justify-between rounded-2xl border border-slate-200 bg-white p-4"
         >
           <div className="flex items-start gap-3">
             <span className="flex h-9 w-9 flex-none items-center justify-center rounded-xl bg-sky-50 text-link-600">

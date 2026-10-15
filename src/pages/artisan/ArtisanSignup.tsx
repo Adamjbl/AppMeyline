@@ -51,7 +51,7 @@ export default function ArtisanSignup() {
       <div className="-mt-3 px-5">
         <div className="mb-5 h-1.5 w-full overflow-hidden rounded-full bg-slate-200">
           <div
-            className="h-full rounded-full bg-navy-900 transition-all"
+            className="h-full rounded-full bg-navy-900 transition-[width] duration-300 ease-out"
             style={{ width: `${(step / 3) * 100}%` }}
           />
         </div>
@@ -73,7 +73,7 @@ export default function ArtisanSignup() {
                     <button
                       key={t.id}
                       onClick={() => toggleTrade(t.id)}
-                      className={`flex items-center gap-1 rounded-full px-3.5 py-2 text-sm font-semibold transition ${
+                      className={`press-sm flex items-center gap-1 rounded-full px-3.5 py-2 text-sm font-semibold transition-colors duration-150 ${
                         active
                           ? 'border-2 border-accent-500 text-accent-600'
                           : 'border border-slate-200 bg-white text-slate-600'
@@ -122,7 +122,7 @@ export default function ArtisanSignup() {
             <button
               disabled={trades.length === 0 || !companyName || !contactName}
               onClick={() => setStep(2)}
-              className="flex w-full items-center justify-center gap-2 rounded-full bg-accent-500 py-3 font-bold text-white disabled:opacity-40"
+              className="flex w-full items-center justify-center gap-2 rounded-full bg-accent-500 py-3 font-bold text-white disabled:opacity-40 press"
             >
               Continuer <ArrowRight size={16} />
             </button>
@@ -152,7 +152,7 @@ export default function ArtisanSignup() {
                     <button
                       key={doc.id}
                       onClick={() => toggleDossierDoc(doc.id)}
-                      className={`flex w-full items-center justify-between rounded-xl border p-3 text-left text-sm ${
+                      className={`press-sm flex w-full items-center justify-between rounded-xl border p-3 text-left text-sm transition-colors duration-150 ${
                         uploaded ? 'border-emerald-300 bg-emerald-50' : 'border-slate-200 bg-white'
                       }`}
                     >
@@ -187,7 +187,7 @@ export default function ArtisanSignup() {
                       <button
                         key={doc.id}
                         onClick={() => toggleDossierDoc(doc.id)}
-                        className={`flex w-full items-center justify-between rounded-xl border p-3 text-left text-sm ${
+                        className={`press-sm flex w-full items-center justify-between rounded-xl border p-3 text-left text-sm transition-colors duration-150 ${
                           uploaded ? 'border-emerald-300 bg-emerald-50' : 'border-slate-200 bg-white'
                         }`}
                       >
@@ -207,7 +207,7 @@ export default function ArtisanSignup() {
               <p className="mb-2 mt-4 text-sm font-bold text-navy-950">Photos de 3 chantiers récents</p>
               <button
                 onClick={() => toggleDossierDoc('photos')}
-                className={`flex w-full flex-col items-center gap-1 rounded-xl border-2 border-dashed p-5 text-center ${
+                className={`press-sm flex w-full flex-col items-center gap-1 rounded-xl border-2 border-dashed p-5 text-center transition-colors duration-150 ${
                   state.artisanDossier.photos === 'uploaded'
                     ? 'border-emerald-300 bg-emerald-50'
                     : 'border-sky-200 bg-sky-50'
@@ -236,7 +236,7 @@ export default function ArtisanSignup() {
                   <button
                     key={doc.id}
                     onClick={() => toggleDossierDoc(doc.id)}
-                    className={`flex w-full items-center justify-between rounded-xl border p-3 text-left text-sm ${
+                    className={`press-sm flex w-full items-center justify-between rounded-xl border p-3 text-left text-sm transition-colors duration-150 ${
                       uploaded ? 'border-emerald-300 bg-emerald-50' : 'border-slate-200 bg-white'
                     }`}
                   >
@@ -256,7 +256,7 @@ export default function ArtisanSignup() {
             <button
               disabled={!requiredUploaded}
               onClick={submitDossier}
-              className="flex w-full items-center justify-center gap-2 rounded-full bg-accent-500 py-3 font-bold text-white disabled:opacity-40"
+              className="flex w-full items-center justify-center gap-2 rounded-full bg-accent-500 py-3 font-bold text-white disabled:opacity-40 press"
             >
               Envoyer mon dossier <ArrowRight size={16} />
             </button>
@@ -265,7 +265,7 @@ export default function ArtisanSignup() {
 
         {step === 3 && (
           <div className="space-y-4">
-            <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+            <div className="rounded-2xl border border-slate-200 bg-white p-4">
               <p className="text-xs font-bold uppercase tracking-wide text-navy-700">
                 Votre dossier · reçu le {new Date().toLocaleDateString('fr-FR', { day: '2-digit', month: 'short' })}
               </p>
@@ -309,7 +309,7 @@ export default function ArtisanSignup() {
 
             <button
               onClick={() => navigate('/artisan/bienvenue')}
-              className="flex w-full items-center justify-center gap-2 rounded-full bg-accent-500 py-3 font-bold text-white"
+              className="flex w-full items-center justify-center gap-2 rounded-full bg-accent-500 py-3 font-bold text-white press"
             >
               Voir la réponse (démo) <ArrowRight size={16} />
             </button>

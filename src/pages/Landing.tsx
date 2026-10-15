@@ -64,13 +64,13 @@ export default function Landing() {
       <div className="mt-6 flex flex-col gap-3">
         <Link
           to="/app"
-          className="flex items-center justify-center gap-2 rounded-full bg-accent-500 py-3.5 font-bold text-white shadow-md shadow-orange-200 transition active:scale-[0.98]"
+          className="flex items-center justify-center gap-2 rounded-full bg-accent-500 py-3.5 font-bold text-white shadow-md shadow-orange-200 press"
         >
           Je cherche un artisan <ArrowRight size={18} />
         </Link>
         <Link
           to="/artisan/rejoindre"
-          className="flex items-center justify-center rounded-full border-2 border-navy-900 py-3.5 font-bold text-navy-900 transition active:scale-[0.98]"
+          className="flex items-center justify-center rounded-full border-2 border-navy-900 py-3.5 font-bold text-navy-900 press"
         >
           Je suis artisan
         </Link>

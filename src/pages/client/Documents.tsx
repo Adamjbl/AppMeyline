@@ -34,7 +34,7 @@ export default function Documents() {
             <section key={section.type}>
               <h2 className="mb-2 font-bold text-navy-950">{section.title}</h2>
               {docs.length === 0 ? (
-                <div className="rounded-2xl border border-slate-200 bg-white p-3.5 text-sm text-slate-400 shadow-sm">
+                <div className="rounded-2xl border border-slate-200 bg-white p-3.5 text-sm text-slate-400">
                   {section.empty}
                 </div>
               ) : (
@@ -42,7 +42,7 @@ export default function Documents() {
                   {docs.map((d) => (
                     <div
                       key={d.id}
-                      className="flex items-center justify-between rounded-2xl border border-slate-200 bg-white p-3.5 shadow-sm"
+                      className="flex items-center justify-between rounded-2xl border border-slate-200 bg-white p-3.5"
                     >
                       <div>
                         <p className="text-sm font-semibold text-navy-950">{d.name}</p>
@@ -61,7 +61,7 @@ export default function Documents() {
         })}
 
         {adding ? (
-          <div className="space-y-2 rounded-2xl border border-slate-200 bg-white p-3.5 shadow-sm">
+          <div className="space-y-2 rounded-2xl border border-slate-200 bg-white p-3.5">
             <input
               value={name}
               onChange={(e) => setName(e.target.value)}
@@ -69,12 +69,12 @@ export default function Documents() {
               className="w-full rounded-xl border border-slate-200 p-2.5 text-sm outline-none focus:border-navy-700"
             />
             <div className="flex gap-2">
-              <button onClick={submit} className="flex-1 rounded-full bg-accent-500 py-2.5 font-bold text-white">
+              <button onClick={submit} className="flex-1 rounded-full bg-accent-500 py-2.5 font-bold text-white press">
                 Ajouter
               </button>
               <button
                 onClick={() => setAdding(false)}
-                className="rounded-full border border-slate-200 px-3.5 py-2.5 text-sm text-slate-500"
+                className="press-sm rounded-full border border-slate-200 px-3.5 py-2.5 text-sm text-slate-500"
               >
                 Annuler
               </button>
@@ -83,7 +83,7 @@ export default function Documents() {
         ) : (
           <button
             onClick={() => setAdding(true)}
-            className="flex w-full items-center justify-center gap-2 rounded-full border-2 border-navy-900 py-3 font-bold text-navy-900"
+            className="flex w-full items-center justify-center gap-2 rounded-full border-2 border-navy-900 py-3 font-bold text-navy-900 press"
           >
             <Plus size={16} /> Ajouter un document
           </button>

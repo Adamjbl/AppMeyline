@@ -10,7 +10,7 @@ interface Props {
 
 export default function EmptyState({ icon: Icon, title, description, action }: Props) {
   return (
-    <div className="rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm">
+    <div className="rounded-2xl border border-slate-200 bg-white p-6 text-center">
       <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-2xl bg-sky-50 text-link-600">
         <Icon size={22} />
       </div>

@@ -49,7 +49,7 @@ export default function Conversation() {
         />
         <button
           onClick={submit}
-          className="flex h-10 w-10 flex-none items-center justify-center rounded-full bg-accent-500 text-white"
+          className="flex h-10 w-10 flex-none items-center justify-center rounded-full bg-accent-500 text-white press"
         >
           <Send size={16} />
         </button>

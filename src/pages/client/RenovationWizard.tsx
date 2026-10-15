@@ -32,7 +32,7 @@ export default function RenovationWizard() {
       <div className="-mt-3 px-5">
         <div className="mb-5 h-1.5 w-full overflow-hidden rounded-full bg-slate-200">
           <div
-            className="h-full rounded-full bg-navy-900 transition-all"
+            className="h-full rounded-full bg-navy-900 transition-[width] duration-300 ease-out"
             style={{ width: `${(step / 3) * 100}%` }}
           />
         </div>
@@ -46,7 +46,7 @@ export default function RenovationWizard() {
                   <button
                     key={t.id}
                     onClick={() => setType(t.id)}
-                    className={`rounded-full px-3.5 py-2 text-sm font-medium transition ${
+                    className={`press-sm rounded-full px-3.5 py-2 text-sm font-medium transition-colors duration-150 ${
                       type === t.id
                         ? 'border-2 border-accent-500 text-accent-600'
                         : 'border border-slate-200 bg-white text-slate-600'
@@ -80,7 +80,7 @@ export default function RenovationWizard() {
 
             <button
               onClick={() => setStep(2)}
-              className="flex w-full items-center justify-center gap-2 rounded-full bg-accent-500 py-3 font-bold text-white"
+              className="flex w-full items-center justify-center gap-2 rounded-full bg-accent-500 py-3 font-bold text-white press"
             >
               Continuer <ArrowRight size={16} />
             </button>
@@ -104,7 +104,7 @@ export default function RenovationWizard() {
             </div>
             <button
               onClick={() => setStep(3)}
-              className="flex w-full items-center justify-center gap-2 rounded-full bg-accent-500 py-3 font-bold text-white"
+              className="flex w-full items-center justify-center gap-2 rounded-full bg-accent-500 py-3 font-bold text-white press"
             >
               Continuer <ArrowRight size={16} />
             </button>
@@ -140,7 +140,7 @@ export default function RenovationWizard() {
             </div>
             <button
               onClick={finish}
-              className="flex w-full items-center justify-center gap-2 rounded-full bg-accent-500 py-3 font-bold text-white"
+              className="flex w-full items-center justify-center gap-2 rounded-full bg-accent-500 py-3 font-bold text-white press"
             >
               Créer le suivi de ma rénovation <ArrowRight size={16} />
             </button>

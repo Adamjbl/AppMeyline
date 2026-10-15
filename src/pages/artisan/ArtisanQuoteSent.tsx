@@ -21,7 +21,7 @@ export default function ArtisanQuoteSent() {
           Votre devis de {quote.totalTTC.toLocaleString('fr-FR')} € TTC est chez {request.clientName}.
         </div>
 
-        <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+        <div className="rounded-2xl border border-slate-200 bg-white p-4">
           <p className="mb-2 font-bold text-navy-950">Et maintenant ?</p>
           <ul className="space-y-2">
             <li className="flex items-start gap-2 text-sm text-slate-600">
@@ -41,7 +41,7 @@ export default function ArtisanQuoteSent() {
 
         <Link
           to="/artisan/dashboard"
-          className="flex items-center justify-center gap-2 rounded-full border-2 border-navy-900 py-3 font-bold text-navy-900"
+          className="flex items-center justify-center gap-2 rounded-full border-2 border-navy-900 py-3 font-bold text-navy-900 press"
         >
           Retour à l’accueil <ArrowRight size={16} />
         </Link>

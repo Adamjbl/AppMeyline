@@ -23,7 +23,7 @@ export default function FindArtisan() {
               <Link
                 key={trade.id}
                 to={`/app/find/${trade.id}`}
-                className={`rounded-2xl border bg-white p-4 shadow-sm transition active:scale-[0.98] ${
+                className={`rounded-2xl border bg-white p-4 press ${
                   trade.urgent ? 'border-red-200 bg-red-50' : 'border-slate-200'
                 }`}
               >

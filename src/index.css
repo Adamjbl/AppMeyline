@@ -10,6 +10,17 @@
   --color-link-600: #2563eb;
   --color-avatar-bg: #e7edfb;
   --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.press {
+  transition: transform 150ms var(--ease-out);
+}
+.press:active {
+  transform: scale(0.97);
+}
+.press-sm:active {
+  transform: scale(0.99);
 }
 
 html,

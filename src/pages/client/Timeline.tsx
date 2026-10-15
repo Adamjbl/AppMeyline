@@ -28,7 +28,7 @@ function StepRow({ step, projectId }: { step: RenovationStep; projectId: string 
   const assigned = step.artisanId ? artisanById(step.artisanId) : undefined
 
   return (
-    <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+    <div className="rounded-2xl border border-slate-200 bg-white p-4">
       <div className="flex items-start justify-between">
         <div className="flex items-center gap-3">
           <span className="flex h-9 w-9 flex-none items-center justify-center rounded-xl bg-sky-50 text-link-600">
@@ -54,7 +54,7 @@ function StepRow({ step, projectId }: { step: RenovationStep; projectId: string 
         <>
           <button
             onClick={() => setOpen((v) => !v)}
-            className="mt-3 w-full rounded-full border-2 border-navy-900 py-2 text-sm font-bold text-navy-900"
+            className="mt-3 w-full rounded-full border-2 border-navy-900 py-2 text-sm font-bold text-navy-900 press"
           >
             {open ? 'Masquer les artisans' : 'Affecter un artisan'}
           </button>
@@ -67,7 +67,7 @@ function StepRow({ step, projectId }: { step: RenovationStep; projectId: string 
                     assignArtisanToStep(projectId, step.id, c.id, c.availableFrom)
                     setOpen(false)
                   }}
-                  className="flex w-full items-center justify-between rounded-xl bg-slate-50 p-2.5 text-left text-sm"
+                  className="press-sm flex w-full items-center justify-between rounded-xl bg-slate-50 p-2.5 text-left text-sm"
                 >
                   <span className="flex items-center gap-1">
                     <span className="font-semibold text-navy-950">{c.name}</span>
@@ -103,7 +103,7 @@ export default function Timeline() {
             action={
               <button
                 onClick={() => navigate('/app/renovation/new')}
-                className="flex w-full items-center justify-center gap-2 rounded-full bg-accent-500 py-3 font-bold text-white"
+                className="flex w-full items-center justify-center gap-2 rounded-full bg-accent-500 py-3 font-bold text-white press"
               >
                 Créer le suivi de ma rénovation <ArrowRight size={16} />
               </button>

@@ -31,7 +31,7 @@ export default function Home() {
       <div className="mt-10 space-y-4 px-5">
         <Link
           to="/app/find"
-          className="flex items-center justify-between rounded-2xl border border-slate-200 bg-white p-4 shadow-sm"
+          className="press-sm flex items-center justify-between rounded-2xl border border-slate-200 bg-white p-4"
         >
           <div className="flex items-start gap-3">
             <span className="flex h-10 w-10 flex-none items-center justify-center rounded-xl bg-sky-50 text-link-600">
@@ -49,7 +49,7 @@ export default function Home() {
 
         <Link
           to={hasProject ? '/app/timeline' : '/app/renovation/new'}
-          className="flex items-center justify-between rounded-2xl border-2 border-accent-500 bg-white p-4 shadow-sm"
+          className="press-sm flex items-center justify-between rounded-2xl border-2 border-accent-500 bg-white p-4"
         >
           <div className="flex items-start gap-3">
             <span className="flex h-10 w-10 flex-none items-center justify-center rounded-xl bg-navy-900 text-white">

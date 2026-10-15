@@ -37,7 +37,7 @@ export default function ArtisanList() {
             <button
               key={s.id}
               onClick={() => setSort(s.id)}
-              className={`rounded-full px-3.5 py-1.5 text-sm font-semibold transition ${
+              className={`press-sm rounded-full px-3.5 py-1.5 text-sm font-semibold transition-colors duration-150 ${
                 sort === s.id
                   ? 'border-2 border-accent-500 text-accent-600'
                   : 'border border-slate-200 bg-white text-slate-600'

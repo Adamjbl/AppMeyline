@@ -19,7 +19,7 @@ export default function ArtisanWelcome() {
           Votre dossier est validé. Votre profil est en ligne.
         </div>
 
-        <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+        <div className="rounded-2xl border border-slate-200 bg-white p-4">
           <p className="mb-2 text-xs font-bold uppercase tracking-wide text-link-600">Visible par les clients</p>
           <ul className="space-y-2">
             <li className="flex items-start gap-2 text-sm text-slate-600">
@@ -53,7 +53,7 @@ export default function ArtisanWelcome() {
           </ul>
         </div>
 
-        <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+        <div className="rounded-2xl border border-slate-200 bg-white p-4">
           <p className="mb-2 text-xs font-bold uppercase tracking-wide text-link-600">Ce que ça change pour vous</p>
           <ul className="space-y-2">
             <li className="flex items-start gap-2 text-sm text-slate-600">
@@ -73,7 +73,7 @@ export default function ArtisanWelcome() {
 
         <button
           onClick={() => navigate('/artisan/dashboard')}
-          className="flex w-full items-center justify-center gap-2 rounded-full bg-accent-500 py-3 font-bold text-white"
+          className="flex w-full items-center justify-center gap-2 rounded-full bg-accent-500 py-3 font-bold text-white press"
         >
           Voir mes demandes <ArrowRight size={16} />
         </button>

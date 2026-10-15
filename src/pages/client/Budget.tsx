@@ -15,7 +15,7 @@ function QuoteRow({ quoteId }: { quoteId: string }) {
   if (!artisan) return null
 
   return (
-    <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+    <div className="rounded-2xl border border-slate-200 bg-white p-4">
       <div className="flex items-center justify-between">
         <div>
           <p className="font-bold text-navy-950">{artisan.name}</p>
@@ -50,13 +50,13 @@ function QuoteRow({ quoteId }: { quoteId: string }) {
           <button
             disabled={!amount}
             onClick={() => acceptQuote(quote.id, Number(amount))}
-            className="rounded-full bg-accent-500 px-3.5 py-2 text-sm font-bold text-white disabled:opacity-40"
+            className="rounded-full bg-accent-500 px-3.5 py-2 text-sm font-bold text-white disabled:opacity-40 press"
           >
             Accepter
           </button>
           <button
             onClick={() => declineQuote(quote.id)}
-            className="rounded-full border border-slate-200 px-3.5 py-2 text-sm font-bold text-slate-500"
+            className="press-sm rounded-full border border-slate-200 px-3.5 py-2 text-sm font-bold text-slate-500"
           >
             Refuser
           </button>
@@ -87,7 +87,7 @@ export default function Budget() {
             action={
               <button
                 onClick={() => navigate('/app/renovation/new')}
-                className="flex w-full items-center justify-center gap-2 rounded-full bg-accent-500 py-3 font-bold text-white"
+                className="flex w-full items-center justify-center gap-2 rounded-full bg-accent-500 py-3 font-bold text-white press"
               >
                 Créer le suivi de ma rénovation <ArrowRight size={16} />
               </button>
@@ -102,7 +102,7 @@ export default function Budget() {
     <div className="pb-6">
       <ScreenHeader title="Votre budget" subtitle="Suivez chaque euro de votre chantier" />
       <div className="-mt-3 space-y-4 px-5">
-        <div className="rounded-2xl bg-navy-950 p-4 text-white shadow-sm">
+        <div className="rounded-2xl bg-navy-950 p-4 text-white">
           <div className="flex justify-between text-sm text-white/70">
             <span>Budget prévu</span>
             <span>{total !== null ? `${total.toLocaleString('fr-FR')} €` : 'Non défini'}</span>

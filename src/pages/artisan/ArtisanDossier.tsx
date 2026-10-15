@@ -24,7 +24,7 @@ export default function ArtisanDossier() {
       <ScreenHeader title="Mon dossier" subtitle={`${reg?.companyName ?? ''} · vérifié BuildFlow`} back />
 
       <div className="-mt-3 space-y-4 px-5">
-        <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+        <div className="rounded-2xl border border-slate-200 bg-white p-4">
           <div className="mb-2 flex items-center justify-between">
             <p className="text-xs font-bold uppercase tracking-wide text-accent-600">Documents privés</p>
             <span className="rounded-full border border-accent-300 px-2 py-0.5 text-[11px] font-semibold text-accent-600">
@@ -46,7 +46,7 @@ export default function ArtisanDossier() {
           </div>
         </div>
 
-        <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+        <div className="rounded-2xl border border-slate-200 bg-white p-4">
           <p className="mb-2 text-xs font-bold uppercase tracking-wide text-link-600">Visible sur votre profil</p>
           <ul className="space-y-2">
             <li className="flex items-start gap-2 text-sm text-slate-600">
@@ -64,7 +64,7 @@ export default function ArtisanDossier() {
           </ul>
         </div>
 
-        <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+        <div className="rounded-2xl border border-slate-200 bg-white p-4">
           <p className="mb-2 font-bold text-navy-950">Chantiers</p>
           {quotes.length === 0 ? (
             <p className="text-sm text-slate-400">Vos devis envoyés apparaîtront ici.</p>

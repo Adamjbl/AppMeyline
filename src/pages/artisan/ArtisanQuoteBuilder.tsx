@@ -61,7 +61,7 @@ export default function ArtisanQuoteBuilder() {
       />
 
       <div className="-mt-3 space-y-4 px-5">
-        <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+        <div className="rounded-2xl border border-slate-200 bg-white p-4">
           <p className="mb-3 text-xs font-bold uppercase tracking-wide text-link-600">
             Pré-rempli à partir de la demande · modifiable
           </p>
@@ -81,7 +81,10 @@ export default function ArtisanQuoteBuilder() {
                   placeholder="€"
                   className="w-20 rounded-lg border border-slate-200 px-2.5 py-2 text-right text-sm font-semibold outline-none focus:border-navy-700"
                 />
-                <button onClick={() => removeItem(item.id)} className="flex-none text-slate-300 hover:text-red-500">
+                <button
+                  onClick={() => removeItem(item.id)}
+                  className="press-sm flex-none text-slate-300 hover:text-red-500"
+                >
                   <Trash2 size={16} />
                 </button>
               </div>
@@ -89,7 +92,7 @@ export default function ArtisanQuoteBuilder() {
           </div>
           <button
             onClick={addItem}
-            className="mt-2 flex items-center gap-1.5 text-sm font-semibold text-link-600"
+            className="press-sm mt-2 flex items-center gap-1.5 text-sm font-semibold text-link-600"
           >
             <Plus size={14} /> Ajouter une ligne
           </button>
@@ -110,7 +113,7 @@ export default function ArtisanQuoteBuilder() {
           </div>
         </div>
 
-        <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+        <div className="rounded-2xl border border-slate-200 bg-white p-4">
           <p className="mb-2 font-bold text-navy-950">Conditions</p>
           <dl className="space-y-1.5 text-sm">
             <div className="flex justify-between">
@@ -144,7 +147,7 @@ export default function ArtisanQuoteBuilder() {
         <button
           onClick={send}
           disabled={items.length === 0 || totalHT === 0}
-          className="flex w-full items-center justify-center gap-2 rounded-full bg-accent-500 py-3 font-bold text-white disabled:opacity-40"
+          className="flex w-full items-center justify-center gap-2 rounded-full bg-accent-500 py-3 font-bold text-white disabled:opacity-40 press"
         >
           Envoyer le devis à {request.clientName} <ArrowRight size={16} />
         </button>

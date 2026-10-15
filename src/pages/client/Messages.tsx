@@ -30,7 +30,7 @@ export default function Messages() {
               <Link
                 key={thread.id}
                 to={`/app/messages/${thread.artisanId}`}
-                className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white p-3.5 shadow-sm"
+                className="press-sm flex items-center gap-3 rounded-2xl border border-slate-200 bg-white p-3.5"
               >
                 <div className="flex h-11 w-11 flex-none items-center justify-center rounded-xl bg-avatar-bg text-sm font-bold text-navy-900">
                   {artisan.name.split(' ').map((p) => p[0]).join('')}

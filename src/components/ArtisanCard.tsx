@@ -7,7 +7,7 @@ export default function ArtisanCard({ artisan }: { artisan: Artisan }) {
   return (
     <Link
       to={`/app/artisans/${artisan.id}`}
-      className="block rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition active:scale-[0.99]"
+      className="block rounded-2xl border border-slate-200 bg-white p-4 press-sm"
     >
       <div className="flex items-start justify-between">
         <div className="flex items-center gap-3">

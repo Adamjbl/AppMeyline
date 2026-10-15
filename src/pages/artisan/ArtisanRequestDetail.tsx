@@ -29,7 +29,7 @@ export default function ArtisanRequestDetail() {
       />
 
       <div className="-mt-3 space-y-4 px-5">
-        <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+        <div className="rounded-2xl border border-slate-200 bg-white p-4">
           <p className="text-xs font-bold uppercase tracking-wide text-link-600">Ce qu’on attend de vous</p>
           <p className="mt-1 font-bold text-navy-950">
             {trade?.name} · étape {request.stepIndex} sur {request.stepsTotal}
@@ -37,7 +37,7 @@ export default function ArtisanRequestDetail() {
           <p className="mt-2 text-sm italic text-slate-600">« {request.message} »</p>
         </div>
 
-        <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+        <div className="rounded-2xl border border-slate-200 bg-white p-4">
           <p className="mb-2 font-bold text-navy-950">Le chantier</p>
           <dl className="space-y-1.5 text-sm">
             <div className="flex justify-between">
@@ -63,7 +63,7 @@ export default function ArtisanRequestDetail() {
           </dl>
         </div>
 
-        <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+        <div className="rounded-2xl border border-slate-200 bg-white p-4">
           <p className="mb-2 font-bold text-navy-950">Documents du projet</p>
           <ul className="space-y-2">
             {request.documents.map((doc, i) => {
@@ -90,13 +90,13 @@ export default function ArtisanRequestDetail() {
 
         <button
           onClick={() => navigate(`/artisan/demandes/${request.id}/devis`)}
-          className="flex w-full items-center justify-center gap-2 rounded-full bg-accent-500 py-3 font-bold text-white"
+          className="flex w-full items-center justify-center gap-2 rounded-full bg-accent-500 py-3 font-bold text-white press"
         >
           Faire mon devis <ArrowRight size={16} />
         </button>
         <button
           onClick={decline}
-          className="flex w-full items-center justify-center gap-2 rounded-full border-2 border-navy-900 py-3 font-bold text-navy-900"
+          className="flex w-full items-center justify-center gap-2 rounded-full border-2 border-navy-900 py-3 font-bold text-navy-900 press"
         >
           Refuser, sans pénalité <ArrowRight size={16} />
         </button>

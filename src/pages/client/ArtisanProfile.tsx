@@ -30,7 +30,7 @@ export default function ArtisanProfile() {
       <ScreenHeader title="Votre artisan" back />
 
       <div className="-mt-3 space-y-4 px-5">
-        <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+        <div className="rounded-2xl border border-slate-200 bg-white p-4">
           <div className="flex items-start justify-between">
             <div className="flex items-center gap-2 rounded-2xl border-2 border-accent-500 px-3 py-1.5">
               <Star size={16} className="fill-accent-500 text-accent-500" />
@@ -57,7 +57,7 @@ export default function ArtisanProfile() {
         {!showForm ? (
           <button
             onClick={() => setShowForm(true)}
-            className="flex w-full items-center justify-between rounded-2xl border-2 border-accent-500 bg-orange-50 p-4 text-left"
+            className="press-sm flex w-full items-center justify-between rounded-2xl border-2 border-accent-500 bg-orange-50 p-4 text-left"
           >
             <div>
               <p className="font-bold text-navy-950">Demander un devis</p>
@@ -82,7 +82,7 @@ export default function ArtisanProfile() {
                 />
                 <button
                   onClick={submitQuote}
-                  className="flex w-full items-center justify-center gap-2 rounded-full bg-accent-500 py-3 font-bold text-white"
+                  className="flex w-full items-center justify-center gap-2 rounded-full bg-accent-500 py-3 font-bold text-white press"
                 >
                   Envoyer la demande <ArrowRight size={16} />
                 </button>
@@ -91,7 +91,7 @@ export default function ArtisanProfile() {
           </div>
         )}
 
-        <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+        <div className="rounded-2xl border border-slate-200 bg-white p-4">
           <p className="mb-2 font-bold text-navy-950">Un professionnel vérifié</p>
           <ul className="space-y-2">
             {artisan.checks.map((c) => (
@@ -138,7 +138,7 @@ export default function ArtisanProfile() {
         {!showForm && (
           <button
             onClick={() => setShowForm(true)}
-            className="flex w-full items-center justify-center gap-2 rounded-full bg-accent-500 py-3 font-bold text-white"
+            className="flex w-full items-center justify-center gap-2 rounded-full bg-accent-500 py-3 font-bold text-white press"
           >
             Demander un devis <ArrowRight size={16} />
           </button>
