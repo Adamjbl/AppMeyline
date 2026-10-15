@@ -1,11 +1,14 @@
 import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from 'react'
-import { RENOVATION_STEP_ORDER } from './mockData'
+import { DEMO_JOB_REQUEST, RENOVATION_STEP_ORDER } from './mockData'
 import type {
   AppState,
+  ArtisanQuote,
   ArtisanRegistration,
   Doc,
+  DossierDocId,
   ProjectType,
   Quote,
+  QuoteLineItem,
   RenovationProject,
   Thread,
 } from './types'
@@ -19,6 +22,9 @@ const EMPTY_STATE: AppState = {
   threads: [],
   documents: [],
   artisanRegistration: null,
+  artisanDossier: {},
+  artisanRequests: [],
+  artisanQuotes: [],
 }
 
 function loadState(): AppState {
@@ -46,6 +52,12 @@ interface StoreApi {
   assignArtisanToStep: (projectId: string, stepId: string, artisanId: string, date: string) => void
   addDocument: (doc: Omit<Doc, 'id' | 'date'>) => void
   registerArtisan: (reg: Omit<ArtisanRegistration, 'submittedAt'>) => void
+  toggleDossierDoc: (docId: DossierDocId) => void
+  sendArtisanQuote: (
+    requestId: string,
+    input: { lineItems: QuoteLineItem[]; startDate: string; durationWeeks: number; depositPercent: number }
+  ) => void
+  declineArtisanRequest: (requestId: string) => void
   resetAll: () => void
 }
 
@@ -192,7 +204,47 @@ export function StoreProvider({ children }: { children: ReactNode }) {
         setState((prev) => ({
           ...prev,
           artisanRegistration: { ...reg, submittedAt: new Date().toISOString() },
+          artisanRequests: prev.artisanRequests.length ? prev.artisanRequests : [DEMO_JOB_REQUEST],
         }))
+      },
+
+      toggleDossierDoc(docId) {
+        setState((prev) => {
+          const next: AppState = structuredClone(prev)
+          next.artisanDossier[docId] = next.artisanDossier[docId] === 'uploaded' ? 'missing' : 'uploaded'
+          return next
+        })
+      },
+
+      sendArtisanQuote(requestId, input) {
+        setState((prev) => {
+          const next: AppState = structuredClone(prev)
+          const request = next.artisanRequests.find((r) => r.id === requestId)
+          if (request) request.status = 'quoted'
+          const totalHT = input.lineItems.reduce((sum, l) => sum + l.amount, 0)
+          const totalTTC = Math.round(totalHT * 1.1)
+          const quote: ArtisanQuote = {
+            requestId,
+            lineItems: input.lineItems,
+            startDate: input.startDate,
+            durationWeeks: input.durationWeeks,
+            depositPercent: input.depositPercent,
+            totalTTC,
+            sentAt: new Date().toISOString(),
+          }
+          next.artisanQuotes = next.artisanQuotes.filter((q) => q.requestId !== requestId)
+          next.artisanQuotes.push(quote)
+          return next
+        })
+      },
+
+      declineArtisanRequest(requestId) {
+        setState((prev) => {
+          const next: AppState = structuredClone(prev)
+          const request = next.artisanRequests.find((r) => r.id === requestId)
+          if (request) request.status = 'declined'
+          return next
+        })
       },
 
       resetAll() {

@@ -98,11 +98,65 @@ export interface Thread {
 
 export interface ArtisanRegistration {
   trades: TradeId[]
+  contactName: string
   companyName: string
   siret: string
   city: string
   zone: string
   submittedAt: string
+}
+
+export const DOSSIER_DOC_IDS = [
+  'kbis',
+  'urssaf',
+  'decennale',
+  'rc_pro',
+  'google',
+  'reference_pdf',
+  'photos',
+  'rge',
+] as const
+export type DossierDocId = (typeof DOSSIER_DOC_IDS)[number]
+
+export type DossierDocStatus = 'missing' | 'uploaded'
+
+export interface ArtisanJobRequest {
+  id: string
+  clientName: string
+  projectName: string
+  tradeId: TradeId
+  stepIndex: number
+  stepsTotal: number
+  message: string
+  city: string
+  distanceKm: number
+  desiredStart: string
+  duration: string
+  building: string
+  surface: string
+  access: string
+  documents: string[]
+  nextStepNote: string
+  contactedCount: number
+  totalContacted: number
+  createdAgo: string
+  status: 'new' | 'quoted' | 'declined'
+}
+
+export interface QuoteLineItem {
+  id: string
+  label: string
+  amount: number
+}
+
+export interface ArtisanQuote {
+  requestId: string
+  lineItems: QuoteLineItem[]
+  startDate: string
+  durationWeeks: number
+  depositPercent: number
+  totalTTC: number
+  sentAt: string
 }
 
 export interface AppState {
@@ -112,4 +166,7 @@ export interface AppState {
   threads: Thread[]
   documents: Doc[]
   artisanRegistration: ArtisanRegistration | null
+  artisanDossier: Partial<Record<DossierDocId, DossierDocStatus>>
+  artisanRequests: ArtisanJobRequest[]
+  artisanQuotes: ArtisanQuote[]
 }

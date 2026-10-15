@@ -1,4 +1,4 @@
-import type { Artisan, Trade } from './types'
+import type { Artisan, ArtisanJobRequest, DossierDocId, Trade } from './types'
 
 export const TRADES: Trade[] = [
   { id: 'maconnerie', name: 'Maçonnerie' },
@@ -154,6 +154,53 @@ export const ARTISANS: Artisan[] = [
     portfolio: [{ label: 'Tableau électrique' }, { label: 'Domotique' }, { label: 'Mise aux normes' }],
     reviews: [{ author: 'Nicolas, Gaillard', rating: 5, verified: true, comment: 'Travail propre et aux normes.' }],
   },
+]
+
+export const DOSSIER_DOCS: {
+  id: DossierDocId
+  label: string
+  sublabel?: string
+  group: 'required' | 'reference' | 'optional'
+}[] = [
+  { id: 'kbis', label: 'Kbis / SIRET', sublabel: 'touchez pour ajouter', group: 'required' },
+  { id: 'urssaf', label: 'Attestation URSSAF', sublabel: 'moins de 6 mois', group: 'required' },
+  { id: 'decennale', label: 'Assurance décennale', group: 'required' },
+  { id: 'rc_pro', label: 'Responsabilité civile pro', group: 'required' },
+  { id: 'google', label: 'Lien de votre fiche Google', group: 'reference' },
+  { id: 'reference_pdf', label: "Attestation d'un client (PDF)", group: 'reference' },
+  { id: 'photos', label: 'Photos de 3 chantiers récents', group: 'reference' },
+  { id: 'rge', label: 'Certification RGE (travaux énergétiques)', group: 'optional' },
+]
+
+export const DEMO_JOB_REQUEST: ArtisanJobRequest = {
+  id: 'demande-ferme-vergers',
+  clientName: 'Camille',
+  projectName: 'Ferme des Vergers',
+  tradeId: 'maconnerie',
+  stepIndex: 1,
+  stepsTotal: 7,
+  message: 'Bonjour, je voudrais reprendre deux murs en pierre de la grange et ouvrir une porte de 90 cm.',
+  city: 'Annemasse',
+  distanceKm: 9,
+  desiredStart: 'lun. 12 oct.',
+  duration: '~3 semaines',
+  building: 'grange en pierre, avant 1950',
+  surface: 'environ 25 m²',
+  access: 'libre, clés en boîte',
+  documents: ['6 photos des murs et de la grange', 'Plans de la grange (PDF)', 'DPE · classe F'],
+  nextStepNote:
+    'Après vous : charpente (étape 2), dès le lun. 2 nov. BuildFlow cale la suite sur votre date de fin.',
+  contactedCount: 1,
+  totalContacted: 3,
+  createdAgo: 'il y a 2 h',
+  status: 'new',
+}
+
+export const DEMO_QUOTE_LINE_ITEMS = [
+  { label: 'Reprise de 2 murs en pierre · 25 m²', amount: 5400 },
+  { label: 'Ouverture porte 90 cm + linteau acier', amount: 2300 },
+  { label: 'Matériaux · pierre, chaux, linteau', amount: 3000 },
+  { label: 'Échafaudage + évacuation des gravats', amount: 600 },
 ]
 
 export function artisansByTrade(tradeId: string): Artisan[] {

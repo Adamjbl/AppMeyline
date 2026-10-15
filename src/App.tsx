@@ -14,6 +14,11 @@ import Messages from './pages/client/Messages'
 import Conversation from './pages/client/Conversation'
 import ArtisanSignup from './pages/artisan/ArtisanSignup'
 import ArtisanWelcome from './pages/artisan/ArtisanWelcome'
+import ArtisanDashboard from './pages/artisan/ArtisanDashboard'
+import ArtisanRequestDetail from './pages/artisan/ArtisanRequestDetail'
+import ArtisanQuoteBuilder from './pages/artisan/ArtisanQuoteBuilder'
+import ArtisanQuoteSent from './pages/artisan/ArtisanQuoteSent'
+import ArtisanDossier from './pages/artisan/ArtisanDossier'
 
 export default function App() {
   return (
@@ -39,6 +44,11 @@ export default function App() {
 
               <Route path="/artisan/rejoindre" element={<ArtisanSignup />} />
               <Route path="/artisan/bienvenue" element={<ArtisanWelcome />} />
+              <Route path="/artisan/dashboard" element={<ArtisanDashboard />} />
+              <Route path="/artisan/dossier" element={<ArtisanDossier />} />
+              <Route path="/artisan/demandes/:requestId" element={<ArtisanRequestDetail />} />
+              <Route path="/artisan/demandes/:requestId/devis" element={<ArtisanQuoteBuilder />} />
+              <Route path="/artisan/demandes/:requestId/envoye" element={<ArtisanQuoteSent />} />
             </Routes>
           </div>
         </div>
