@@ -3,7 +3,7 @@ import { Home, ShieldCheck, Calendar, FileText, ArrowRight } from 'lucide-react'
 
 export default function Landing() {
   return (
-    <div className="safe-top safe-bottom flex h-full flex-col overflow-y-auto px-5 pb-6 pt-5">
+    <div className="safe-top safe-bottom flex h-full flex-col overflow-y-auto px-5 pb-8 pt-8">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
           <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-navy-900 text-white">
@@ -18,7 +18,9 @@ export default function Landing() {
         </span>
       </div>
 
-      <p className="mt-8 text-xs font-bold uppercase tracking-wide text-navy-700">
+      <div className="flex-1" />
+
+      <p className="text-xs font-bold uppercase tracking-wide text-navy-700">
         Trouvez votre artisan en 2 clics
       </p>
       <h1 className="mt-1 text-3xl font-extrabold leading-tight text-navy-950">
