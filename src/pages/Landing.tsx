@@ -3,7 +3,7 @@ import { Home, ShieldCheck, Calendar, FileText, ArrowRight } from 'lucide-react'
 
 export default function Landing() {
   return (
-    <div className="safe-top safe-bottom flex h-full flex-col overflow-y-auto px-5 pb-8 pt-8">
+    <div className="safe-top safe-bottom h-full overflow-y-auto px-5 pb-8 pt-8">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
           <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-navy-900 text-white">
@@ -18,9 +18,20 @@ export default function Landing() {
         </span>
       </div>
 
-      <div className="flex-1" />
+      <div className="relative mt-6 overflow-hidden rounded-3xl bg-gradient-to-br from-navy-700 to-navy-950">
+        <div className="aspect-[5/4] w-full" />
+        <div className="absolute inset-x-4 bottom-4 flex items-center gap-2.5 rounded-2xl bg-white/95 p-3 shadow-lg backdrop-blur">
+          <span className="flex h-8 w-8 flex-none items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+            <ShieldCheck size={16} />
+          </span>
+          <div>
+            <p className="text-sm font-bold text-navy-950">Votre projet, entre de bonnes mains.</p>
+            <p className="text-xs text-slate-500">Des artisans vérifiés, en toute confiance.</p>
+          </div>
+        </div>
+      </div>
 
-      <p className="text-xs font-bold uppercase tracking-wide text-navy-700">
+      <p className="mt-5 text-xs font-bold uppercase tracking-wide text-navy-700">
         Trouvez votre artisan en 2 clics
       </p>
       <h1 className="mt-1 text-3xl font-extrabold leading-tight text-navy-950">
@@ -31,16 +42,6 @@ export default function Landing() {
       <p className="mt-3 text-sm text-slate-500">
         Des artisans vérifiés près de chez vous, et un chantier qui avance au bon rythme.
       </p>
-
-      <div className="mt-5 flex items-center gap-2.5 rounded-2xl border border-slate-200 bg-white p-3">
-        <span className="flex h-8 w-8 flex-none items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
-          <ShieldCheck size={16} />
-        </span>
-        <div>
-          <p className="text-sm font-bold text-navy-950">Votre projet, entre de bonnes mains.</p>
-          <p className="text-xs text-slate-500">Des artisans vérifiés, en toute confiance.</p>
-        </div>
-      </div>
 
       <div className="mt-5 grid grid-cols-3 gap-2">
         {[
@@ -57,7 +58,7 @@ export default function Landing() {
         ))}
       </div>
 
-      <div className="mt-6 flex flex-col gap-3">
+      <div className="mt-8 flex flex-col gap-3">
         <Link
           to="/app"
           className="flex items-center justify-center gap-2 rounded-full bg-accent-500 py-3.5 font-bold text-white shadow-md shadow-orange-200 press"
